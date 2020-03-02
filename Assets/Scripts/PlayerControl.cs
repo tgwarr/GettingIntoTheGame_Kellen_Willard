@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed = 10.0f;
     const float horizontalBoundary = 10.0f;
+    public GameObject projectile;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class PlayerControl : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
 
         transform.Translate(Vector3.right * horizontal * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectile, transform.position, projectile.transform.rotation);
+        }
     }
 }
