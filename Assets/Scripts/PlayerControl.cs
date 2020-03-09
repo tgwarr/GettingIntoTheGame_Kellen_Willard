@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
         }
         float horizontal = Input.GetAxis("Horizontal");
 
-        transform.Translate(Vector3.right * horizontal * Time.deltaTime);
+        transform.Translate(Vector3.right * horizontal * speed * Time.deltaTime);
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
